@@ -61,11 +61,10 @@
       .btn {
         .button-signup(@padding: 10px, @border-radius: 5px, @width: 120px);
         font-size: 1.6rem;
-        .hover-state(
-          @hover-property: transform,
-          @from-hover-property-value: scale(1),
-          @to-hover-property-value: scale(1.05)
-        );
+        &:hover {
+          background-color: @button-font-color;
+          color: @btn-bg-color;
+        }
       }
     }
 
