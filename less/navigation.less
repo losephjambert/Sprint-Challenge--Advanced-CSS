@@ -1,1 +1,63 @@
 // Navigation code here
+nav {
+  background-color: @nav-bg;
+  color: @nav-font;
+  position: sticky;
+  top: 0;
+  opacity: 0.96;
+
+  div {
+    .flex-container(column, wrap, center, center);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    h1 {
+      padding: 10px 0;
+      position: relative;
+      .orbital {
+        display: inline-flex;
+        position: absolute;
+        left: -25px;
+        top: 9px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid @shuttle-gray;
+        border-radius: 100%;
+        .animation(
+          @duration: 10000ms,
+          @timing-function: linear,
+          @delay: 0ms,
+          @iteration-count: infinite,
+          @direction: normal,
+          @fill-mode: none,
+          @play-state: running,
+          @name: orbit
+        );
+        &::before {
+          content: "";
+          position: absolute;
+          top: 7px;
+          width: 5px;
+          height: 5px;
+          border-radius: 100%;
+          background-color: @ebony-clay;
+        }
+      }
+    }
+  }
+
+  .nav-links {
+    .flex-container(row, wrap, space-evenly, center);
+    width: 100%;
+    max-width: 400px;
+    a {
+      color: inherit;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      position: relative;
+    }
+  } // end .nav-links
+} // end nav

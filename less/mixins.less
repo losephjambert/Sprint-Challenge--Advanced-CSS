@@ -1,1 +1,68 @@
 // Mixins Here
+// flex box
+.flex-container(
+  @direction: row,
+  @wrap: wrap,
+  @justify: center,
+  @align: center
+  ) {
+  display: flex;
+  flex-flow: @direction @wrap;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.hover-state(
+  @transition: 200ms,
+  @timing-function: ease,
+  @hover-property: color,
+  @from-hover-property-value: red,
+  @to-hover-property-value: blue
+  ) {
+  @{hover-property}: @from-hover-property-value;
+  transition: @transition @timing-function;
+  &:hover {
+    @{hover-property}: @to-hover-property-value;
+  }
+}
+
+//animations
+.animation(
+  @duration: 200ms,
+  @timing-function: ease,
+  @delay: 0ms,
+  @iteration-count: 1,
+  @direction: normal,
+  @fill-mode: none,
+  @play-state: running,
+  @name
+  ) {
+  animation: @duration @timing-function @delay @iteration-count @direction
+    @fill-mode @play-state @name;
+}
+
+// buttons
+.button-signup(
+  @color: @button-font-color,
+  @bg-color: @btn-bg-color,
+  @padding: 5px,
+  @border-radius: 3px,
+  @focus-shadow: @button-focus,
+  @width: auto
+  ) {
+  border: none;
+  outline: none;
+  color: @color;
+  background-color: @bg-color;
+  padding: @padding;
+  border-radius: @border-radius;
+  width: @width;
+  transition: @focus-transition;
+  &:focus {
+    box-shadow: 0 0 3px 0 @focus-shadow;
+  }
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 3px 0 @focus-shadow;
+  }
+}

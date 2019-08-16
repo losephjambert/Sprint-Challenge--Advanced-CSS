@@ -1,52 +1,61 @@
-// Home Content
-
-.home {
+.blog {
+  padding: 0 15px;
   .intro {
-    img {
-      border-radius: 10px;
-    }
-
-    h2 {
-      padding: 15px;
-    }
+    padding: 50px 15px;
 
     p {
-      padding: 0 15px;
+      padding: 15px 0;
     }
-  }
+  } // end .intro
 
-  .space-images {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+  .recent-posts {
+    h3 {
+      margin-bottom: 15px;
+    }
 
-    img {
-      width: 28%;
-      margin: 20px 2.5%;
-      border-radius: 20px;
-      height: 100%;
+    .posts-container {
+      .flex-container(
+        @direction: row,
+        @wrap: wrap,
+        @justify: space-between,
+        @align: flex-start
+      );
       @media @phone {
-        width: 100%;
-        margin-right: 3.5%;
-        margin-left: 3.5%;
-        &:not(:nth-child(1)) {
-          display: none;
+        .flex-container(
+          @direction: column,
+          @wrap: wrap,
+          @justify: flex-start,
+          @align: flex-start
+        );
+      }
+
+      article {
+        width: 33.333%;
+        padding: 15px 2%;
+        @media @phone {
+          width: 100%;
+        }
+
+        h4 {
+          font-size: 2rem;
+        }
+
+        img {
+          border-radius: 25px;
+          margin: 15px 0;
+        }
+
+        p {
+          @media @tablet {
+            white-space: nowrap;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
         }
       }
-    }
-  }
-
-  .visit-planets {
-    padding: 15px;
-
-    h3 {
-      margin-top: 11px;
-    }
-
-    p {
-      margin-top: 13px;
-    }
-  }
+    } // end .posts-container
+  } // end .recent-posts
 
   .walk {
     margin-top: 60px;
@@ -88,7 +97,6 @@
         }
       }
     }
-
     .walk-img {
       width: 46%;
       margin-left: 4%;
@@ -104,5 +112,5 @@
         border-radius: 10px;
       }
     }
-  }
-} // home
+  } //end .walk
+} // end .blog
