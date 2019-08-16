@@ -1,1 +1,29 @@
 // Navigation code here
+nav {
+  background-color: @nav-bg;
+  color: @nav-font;
+
+  div {
+    .flex(column, wrap, center, center);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    h1 {
+      padding: 10px 0;
+    }
+  }
+
+  .nav-links {
+    .flex(row, wrap, space-evenly, center);
+    width: 100%;
+    max-width: 400px;
+    a {
+      color: inherit;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 1.3rem;
+    }
+  } // end .nav-links
+} // end nav
