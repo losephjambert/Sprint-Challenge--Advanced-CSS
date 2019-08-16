@@ -1,11 +1,29 @@
 // Mixins Here
 // flex box
-.flex-container
-  (@direction: row, @wrap: wrap, @justify: center, @align: center) {
+.flex-container(
+  @direction: row,
+  @wrap: wrap,
+  @justify: center,
+  @align: center
+  ) {
   display: flex;
   flex-flow: @direction @wrap;
   justify-content: @justify;
   align-items: @align;
+}
+
+.hover-state(
+  @transition: 200ms,
+  @timing-function: ease,
+  @hover-property: color,
+  @from-hover-property-value: red,
+  @to-hover-property-value: blue
+  ) {
+  @hover-property: @from-hover-property-value;
+  transition: @transition @timing-function;
+  &:hover {
+    @hover-property: @to-hover-property-value;
+  }
 }
 
 // buttons
