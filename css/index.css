@@ -259,9 +259,17 @@ footer {
   width: 120px;
   transition: 200ms;
   font-size: 1.6rem;
+  transform: scale(1);
+  transition: 200ms ease;
 }
 .home .walk .walk-text .btn:focus {
   box-shadow: 0 0 3px 0 #22283a;
+}
+.home .walk .walk-text .btn:hover {
+  cursor: pointer;
+}
+.home .walk .walk-text .btn:hover {
+  transform: scale(1.05);
 }
 .home .walk .walk-img {
   width: 46%;

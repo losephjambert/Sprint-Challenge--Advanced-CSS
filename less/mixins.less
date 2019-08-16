@@ -19,10 +19,10 @@
   @from-hover-property-value: red,
   @to-hover-property-value: blue
   ) {
-  @hover-property: @from-hover-property-value;
+  @{hover-property}: @from-hover-property-value;
   transition: @transition @timing-function;
   &:hover {
-    @hover-property: @to-hover-property-value;
+    @{hover-property}: @to-hover-property-value;
   }
 }
 
@@ -45,5 +45,8 @@
   transition: @focus-transition;
   &:focus {
     box-shadow: 0 0 3px 0 @focus-shadow;
+  }
+  &:hover {
+    cursor: pointer;
   }
 }
